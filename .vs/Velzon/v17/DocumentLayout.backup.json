@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\israe\\source\\repos\\App_System_Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\views\\produtos\\produtos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\views\\produtos\\produtos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\views\\layouts\\hovered.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\views\\layouts\\hovered.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Produtos.cshtml",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Produtos\\Produtos.cshtml",
+              "RelativeDocumentMoniker": "Velzon\\Views\\Produtos\\Produtos.cshtml",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Produtos\\Produtos.cshtml",
+              "RelativeToolTip": "Velzon\\Views\\Produtos\\Produtos.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T23:49:37.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_sidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Shared\\_sidebar.cshtml",
+              "RelativeDocumentMoniker": "Velzon\\Views\\Shared\\_sidebar.cshtml",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Shared\\_sidebar.cshtml",
+              "RelativeToolTip": "Velzon\\Views\\Shared\\_sidebar.cshtml",
+              "ViewState": "AgIAABsDAAAAAAAAAAAmwEQDAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T21:47:51.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Hovered.cshtml",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Layouts\\Hovered.cshtml",
+              "RelativeDocumentMoniker": "Velzon\\Views\\Layouts\\Hovered.cshtml",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Layouts\\Hovered.cshtml",
+              "RelativeToolTip": "Velzon\\Views\\Layouts\\Hovered.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T21:44:49.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Velzon\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Velzon\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T21:42:18.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Startup.cs",
+              "RelativeDocumentMoniker": "Velzon\\Startup.cs",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Startup.cs",
+              "RelativeToolTip": "Velzon\\Startup.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T21:41:53.276Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
