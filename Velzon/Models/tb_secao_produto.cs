@@ -26,7 +26,7 @@ public partial class tb_secao_produto
     public byte[] sp_dtAcs { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] sp_desat { get; set; }
+    public int sp_desat { get; set; }
 
     [Column(TypeName = "varchar(48)")]
     public string sp_desc { get; set; }

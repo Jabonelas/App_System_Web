@@ -51,13 +51,16 @@ else if (mensagem == "O produto foi atualizado com sucesso!")
     </div>
 }
 
-
-
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">Produtos Cadastrados</h5>
+                <div class="col-lg-12">
+                    <div class="text-end">
+                        <a href="/Produtos/CadastrarProduto" class="btn btn-primary">Cadastrar Novo Produto</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table id="model-datatables" class="table table-bordered nowrap table-striped align-middle"
@@ -72,7 +75,9 @@ else if (mensagem == "O produto foi atualizado com sucesso!")
                             <th>SubCategoria</th>
                             <th>Vlr. Un. Prod.</th>
                             <th>Est. Total</th>
-                            <th>Est. Total</th>
+                            <th>
+                                <Opt>Opções</Opt>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -160,7 +165,7 @@ else if (mensagem == "O produto foi atualizado com sucesso!")
 
         @* location.reload(); *@
 
-                                                                                                                                },
+                                                                                                                                                                                                                                        },
                     error: function (xhr, status, error) {
 
                         console.log("Ocorreu um erro durante a requisição AJAX: " + error);

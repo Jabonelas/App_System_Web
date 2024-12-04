@@ -16,17 +16,17 @@ public partial class tb_categoria_produto
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] cp_dtCri { get; set; }
+    public DateTime cp_dtCri { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] cp_dtAlt { get; set; }
+    public DateTime cp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[] cp_dtAcs { get; set; }
+    public DateTime cp_dtAcs { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] cp_desat { get; set; }
+    public int cp_desat { get; set; }
 
     [Column(TypeName = "varchar(60)")]
     public string cp_desc { get; set; }

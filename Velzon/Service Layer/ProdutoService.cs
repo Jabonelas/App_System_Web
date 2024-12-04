@@ -28,6 +28,57 @@ public class ProdutoService
 
         context.tb_produto.Add(_produto);
         context.SaveChanges();
+
+        CadastrarProdutoFiliais(_produto);
+    }
+
+
+    public void CadastrarProdutoFiliais(tb_produto _produto)
+    {
+
+        var listaFiliaisAtivasCadastradas = BuscarFiliaisCadastrosAtivos();
+
+        foreach (var filial in listaFiliaisAtivasCadastradas)
+        {
+
+            tb_produto_filial _produto_Filial = new tb_produto_filial();
+
+            _produto_Filial.pf_codRef = _produto.pd_codRef;
+            _produto_Filial.pf_desc = _produto.pd_desc;
+            _produto_Filial.pf_descCurta = _produto.pd_descCurta;
+            _produto_Filial.pf_proTipo = _produto.pd_proTipo;
+            _produto_Filial.pf_unMedCom = _produto.pd_unMedCom;
+            _produto_Filial.pf_dtCri = DateTime.Now;
+            _produto_Filial.pf_dtAlt = DateTime.Now;
+            _produto_Filial.pf_vlrUnCom = _produto.pd_vlrUnComBase;
+            _produto_Filial.pf_cstUnCom = _produto.pd_cstUnComBase;
+            _produto_Filial.pf_estMin = _produto.pd_estMinBase;
+            _produto_Filial.pf_estMax = _produto.pd_estMaxBase;
+            _produto_Filial.pf_desat = _produto.pd_desat;
+            _produto_Filial.pf_canc = 0;
+            _produto_Filial.fk_tb_produto = _produto.id_produto;
+            _produto_Filial.fk_tb_ator = filial.id_ator;
+
+
+            context.tb_produto_filial.Add(_produto_Filial);
+            context.SaveChanges();
+
+        }
+    }
+
+
+    public IEnumerable<dynamic> BuscarFiliaisCadastrosAtivos()
+    {
+
+
+        var filiaisCadastradas = context.tb_ator
+        .Where(x => x.at_atorTipo == 11 && x.at_desat == 0)
+        .Select(x => new { x.id_ator, x.at_atorTipo, x.at_desat })
+        .ToList();
+
+        return filiaisCadastradas;
+
+
     }
 
 

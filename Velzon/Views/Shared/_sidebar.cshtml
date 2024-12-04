@@ -1007,23 +1007,23 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarTables">
-                        <i class="las la-table"></i> <span data-key="t-tables">Cadastros</span>
+                        aria-controls="sidebarTables">
+                        @* <i class="las la-table"></i> <span data-key="t-tables">Cadastros</span> *@
+                        <i class="las la-table"></i> <span>Cadastros</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarTables">
                         <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
+                            @* <li class="nav-item">
                                 <a href="@Url.Action("CadastrarProduto", "Produtos")" class="nav-link">Cadastrar
                                     Produtos</a>
-                            </li>
+                            </li> *@
                             <li class="nav-item">
                                 <a href="@Url.Action("Produtos", "Produtos")" class="nav-link">Produtos</a>
                             </li>
-                            @* <li class="nav-item">
-                                <a href="@Url.Action("ListJs", "Tables")" class="nav-link" data-key="t-list-js">List
-                                    Js</a>
-                            </li>
                             <li class="nav-item">
+                                <a href="@Url.Action("CadastrarCategoria", "Categorias")" class="nav-link">Categoria</a>
+                            </li>
+                            @* <li class="nav-item">
                                 <a href="@Url.Action("Datatables", "Tables")" class="nav-link"
                                     data-key="t-datatables">Datatables</a>
                             </li> *@

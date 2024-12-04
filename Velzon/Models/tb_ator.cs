@@ -41,7 +41,7 @@ public partial class tb_ator
     public byte[] at_dtAcs { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] at_desat { get; set; }
+    public int at_desat { get; set; }
 
     [Column(TypeName = "tinyint")]
     public long at_genero { get; set; }

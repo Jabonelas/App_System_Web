@@ -31,6 +31,8 @@ namespace Velzon
 
             // Registro de serviços personalizados
             services.AddScoped<ProdutoService>();
+            services.AddScoped<CategoriaService>();
+            services.AddScoped<SecaoService>();
 
             // Registro do suporte a MVC (Controllers e Views)
             services.AddControllersWithViews();
@@ -60,7 +62,8 @@ namespace Velzon
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Produtos}/{action=Produtos}/{id?}");
+                    pattern: "{controller=Categorias}/{action=CadastrarCategoria}/{id?}");
+                // pattern: "{controller=Produtos}/{action=Produtos}/{id?}");
                 // pattern: "{controller=DashBoard}/{action=Index}/{id?}");
             });
         }

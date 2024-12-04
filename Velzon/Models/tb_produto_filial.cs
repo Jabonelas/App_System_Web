@@ -25,18 +25,18 @@ public partial class tb_produto_filial
     public string pf_descCurta { get; set; }
 
     [Column(TypeName = "tinyint")]
-    public long pf_proTipo { get; set; }
+    public long? pf_proTipo { get; set; }
 
     [Column(TypeName = "tinyint")]
     public long pf_unMedCom { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] pf_dtCri { get; set; }
+    public DateTime pf_dtCri { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] pf_dtAlt { get; set; }
+    public DateTime pf_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
     public byte[] pf_dtAcs { get; set; }
@@ -44,25 +44,25 @@ public partial class tb_produto_filial
     public long? pf_atorFil { get; set; }
 
     [Column(TypeName = "NUMERIC(13, 2)")]
-    public decimal pf_vlrUnCom { get; set; }
+    public decimal? pf_vlrUnCom { get; set; }
 
     [Column(TypeName = "NUMERIC(13, 2)")]
-    public decimal pf_cstUnCom { get; set; }
+    public decimal? pf_cstUnCom { get; set; }
 
     [Column(TypeName = "NUMERIC(13, 2)")]
-    public byte[] pf_estMin { get; set; }
+    public decimal? pf_estMin { get; set; }
 
     [Column(TypeName = "money")]
-    public byte[] pf_estMax { get; set; }
+    public decimal? pf_estMax { get; set; }
 
     [Column(TypeName = "NUMERIC(13, 3)")]
     public long pf_est { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] pf_desat { get; set; }
+    public decimal? pf_desat { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] pf_canc { get; set; }
+    public int pf_canc { get; set; }
 
     public long? fk_tb_produto { get; set; }
 
