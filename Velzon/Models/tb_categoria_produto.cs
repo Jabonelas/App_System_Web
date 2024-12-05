@@ -23,7 +23,7 @@ public partial class tb_categoria_produto
     public DateTime cp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public DateTime cp_dtAcs { get; set; }
+    public DateTime? cp_dtAcs { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
     public int cp_desat { get; set; }

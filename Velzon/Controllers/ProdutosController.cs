@@ -70,7 +70,7 @@ namespace Velzon.Controllers
             {
                 try
                 {
-                    // Chamada ao serviço para cadastrar o produto
+                    // Chamada ao serviço para atualizar o cadastro do produto
                     produtoService.EditarProduto(_tb_Produto);
 
                     TempData["mensagem"] = "O produto foi atualizado com sucesso!";

@@ -18,18 +18,34 @@ namespace Velzon.Controllers
             categoriaService = _categoriaService;
         }
 
-        [ActionName("Categoria")]
-        public IActionResult Categoria()
+        [ActionName("Categorias")]
+        public IActionResult Categorias()
         {
-            return View();
+            try
+            {
+                var listaCategorias = categoriaService.CarregarListaCategorias();
+
+                ViewData["ListaCategorias"] = listaCategorias;
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                // Log do erro
+                Console.WriteLine($"Erro ao exibir todas as categorias: {ex.Message}");
+
+                TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+                return RedirectToAction("CadastrarCategorias", "Categorias");
+            }
         }
+
 
         [HttpGet]
         public IActionResult GetCategorias()
         {
             try
             {
-                var listaCategorias = categoriaService.BuscarCategoria();
+                var listaCategorias = categoriaService.BuscarCategorias();
 
                 return Ok(listaCategorias);
 
@@ -53,6 +69,7 @@ namespace Velzon.Controllers
             return View();
         }
 
+
         [HttpPost]
         public IActionResult CadastrarCategoria(tb_categoria_produto _categoria_produto)
         {
@@ -74,6 +91,85 @@ namespace Velzon.Controllers
                     TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
 
                     return RedirectToAction("CadastrarCategoria", "Categorias");
+                }
+            }
+            else
+            {
+                TempData["mensagem"] = "Por favor, preencha todos os campos obrigatórios para continuar.";
+                return View(_categoria_produto);
+            }
+        }
+
+
+        [HttpPatch]
+        public IActionResult DeletarCategoria(int _idCategoria)
+        {
+
+            try
+            {
+                categoriaService.DeletarCategoria(_idCategoria);
+
+                TempData["mensagem"] = "A categoria foi deletada com sucesso!";
+
+                return RedirectToAction("Categorias", "Categorias");
+
+            }
+            catch (Exception ex)
+            {
+                // Log do erro
+                Console.WriteLine($"Erro ao desativar categoria: {ex.Message}");
+
+                TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+
+                return RedirectToAction("Categorias", "Categorias");
+            }
+        }
+
+
+        [ActionName("EditarCategoria")]
+        public IActionResult EditarCategoria(int idCategoria)
+        {
+            try
+            {
+                var categoria = categoriaService.DadosCategoriaEditar(idCategoria);
+
+
+                return View(categoria);
+            }
+            catch (Exception ex)
+            {
+                // Log do erro
+                Console.WriteLine($"Erro ao exibir dados da categoria selecionada: {ex.Message}");
+
+                TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+                return RedirectToAction("Produtos", "Produtos");
+            }
+        }
+
+
+
+        [HttpPut]
+        [HttpPost]
+        public IActionResult EditarCategoria(tb_categoria_produto _categoria_produto)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Chamada ao serviço para atualizar o cadastro da categoria
+                    categoriaService.EditarCadastro(_categoria_produto);
+
+                    TempData["mensagem"] = "A categoria foi atualizada com sucesso!";
+                    return RedirectToAction("Categorias", "Categorias");
+                }
+                catch (Exception ex)
+                {
+                    // Log do erro
+                    Console.WriteLine($"Erro ao editar os dados da categoria: {ex.Message}");
+
+                    TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+
+                    return RedirectToAction("Categorias", "Categorias");
                 }
             }
             else

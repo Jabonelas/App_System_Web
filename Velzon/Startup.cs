@@ -35,8 +35,17 @@ namespace Velzon
             services.AddScoped<SecaoService>();
 
             // Registro do suporte a MVC (Controllers e Views)
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                    .AddSessionStateTempDataProvider(); // Adiciona o provedor de TempData para usar sessões
+
+            // Adiciona suporte para sessões
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Tempo de expiração da sessão
+                options.Cookie.HttpOnly = true; // Aumenta a segurança da sessão
+            });
         }
+
 
         // Configuração do pipeline de requisições HTTP
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -56,17 +65,19 @@ namespace Velzon
 
             app.UseRouting();
 
+            // Adiciona o suporte a sessões
+            app.UseSession();  // Habilita o middleware de sessão
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Categorias}/{action=CadastrarCategoria}/{id?}");
-                // pattern: "{controller=Produtos}/{action=Produtos}/{id?}");
-                // pattern: "{controller=DashBoard}/{action=Index}/{id?}");
+                    pattern: "{controller=Categorias}/{action=Categorias}/{id?}");
             });
         }
+
     }
 
 }
