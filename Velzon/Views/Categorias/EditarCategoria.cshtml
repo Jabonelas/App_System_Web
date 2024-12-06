@@ -37,7 +37,7 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
                 <div class="card-body">
                     <p class="text-muted">Aqui você pode realizar o cadastrarProduto da categoria</p>
                     <div class="live-preview">
-                        <form asp-controller="Categorias" asp-action="CadastrarCategoria" method="post">
+                        <form asp-controller="Categorias" asp-action="EditarCategoria" method="post">
                             @* @Html.AntiForgeryToken() *@
                             <div class="row g-3">
 
@@ -57,6 +57,16 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
                                             <option selected>Selecione...</option>
                                         </select>
                                         <label for="Secao">Seção</label>
+                                    </div>
+                                </div>
+
+
+                                @* pegando apenas o id da categoria *@
+                                <div class="col-lg-2">
+                                    <div class="form-floating">
+                                        <input asp-for="id_categoria_produto" type="hidden" class="form-control"
+                                            id="DescricaoCategoria" minlength="5" maxlength="200"
+                                            placeholder="Descrição da categoria">
                                     </div>
                                 </div>
 

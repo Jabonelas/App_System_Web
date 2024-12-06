@@ -147,9 +147,9 @@ else if (mensagem == "A categoria foi atualizada com sucesso!")
                     data: { _idCategoria: idCategoria },
                     success: function () {
 
-        @* location.reload(); *@
+                        location.reload();
 
-                                },
+                    },
                     error: function (xhr, status, error) {
 
                         console.log("Ocorreu um erro durante a requisição AJAX: " + error);

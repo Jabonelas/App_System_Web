@@ -26,7 +26,6 @@ public class CategoriaService
         context.tb_categoria_produto.Add(_categoria_produto);
         context.SaveChanges();
 
-        // CadastrarProdutoFiliais(tb_categoria_produto);
     }
 
 
@@ -55,7 +54,7 @@ public class CategoriaService
     }
 
 
-    public void EditarCadastro(tb_categoria_produto _categoria_produto)
+    public void EditarCadastroCategoria(tb_categoria_produto _categoria_produto)
     {
         if (_categoria_produto == null)
         {
@@ -80,12 +79,6 @@ public class CategoriaService
         }
     }
 
-
-
-
-
-
-
     public IEnumerable<dynamic> CarregarListaCategorias()
     {
 
@@ -102,39 +95,9 @@ public class CategoriaService
 
                                          };
 
-
-
-
-
         return listaCategoriasCadastradas;
     }
 
-
-    public IEnumerable<dynamic> ListaEstoqueProdutoFiliais(int _codRef)
-    {
-
-        var listaEstoqueProdutoFiliais = from produtoFilial in context.tb_produto_filial
-                                         join produto in context.tb_produto
-                                         on produtoFilial.fk_tb_produto equals produto.id_produto
-                                         join filial in context.tb_ator
-                                         on produtoFilial.fk_tb_ator equals filial.id_ator
-                                         where produto.pd_desat == 0
-                                         && produtoFilial.pf_codRef == _codRef
-                                         orderby produtoFilial.pf_est descending
-                                         select new
-                                         {
-                                             produtoFilial.id_produto_filial,
-                                             produtoFilial.pf_codRef,
-                                             produtoFilial.pf_desc,
-                                             produtoFilial.pf_vlrUnCom,
-                                             produtoFilial.pf_desat,
-                                             produtoFilial.pf_est,
-                                             filial.at_cnpj,
-                                             filial.at_nomeFant,
-                                         };
-
-        return listaEstoqueProdutoFiliais;
-    }
 
     public tb_categoria_produto DadosCategoriaEditar(int _idCategoria)
     {
@@ -146,7 +109,6 @@ public class CategoriaService
     }
 
 
-
     public void DeletarCategoria(int _idCategoria)
     {
         var categoriaDesativar = context.tb_categoria_produto.FirstOrDefault(x => x.id_categoria_produto == _idCategoria);
@@ -156,7 +118,7 @@ public class CategoriaService
             categoriaDesativar.cp_desat = 1;
             categoriaDesativar.cp_dtAlt = DateTime.Now;
 
-            // context.SaveChanges();
+            context.SaveChanges();
         }
         else
         {

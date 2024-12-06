@@ -157,7 +157,7 @@ namespace Velzon.Controllers
                 try
                 {
                     // Chamada ao serviço para atualizar o cadastro da categoria
-                    categoriaService.EditarCadastro(_categoria_produto);
+                    categoriaService.EditarCadastroCategoria(_categoria_produto);
 
                     TempData["mensagem"] = "A categoria foi atualizada com sucesso!";
                     return RedirectToAction("Categorias", "Categorias");

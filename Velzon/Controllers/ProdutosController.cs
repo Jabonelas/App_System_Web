@@ -62,6 +62,7 @@ namespace Velzon.Controllers
             }
         }
 
+
         [HttpPut]
         [HttpPost]
         public IActionResult EditarProduto(tb_produto _tb_Produto)
@@ -99,6 +100,7 @@ namespace Velzon.Controllers
         {
             return View();
         }
+
 
         [HttpPost]
         public IActionResult CadastrarProduto(tb_produto _tb_Produto)
@@ -176,9 +178,6 @@ namespace Velzon.Controllers
                 return RedirectToAction("CadastrarProduto", "Produtos");
             }
         }
-
-
-
 
 
         [HttpPatch]

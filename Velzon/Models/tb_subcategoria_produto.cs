@@ -20,20 +20,20 @@ public partial class tb_subcategoria_produto
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] scp_dtCri { get; set; }
+    public DateTime scp_dtCri { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] scp_dtAlt { get; set; }
+    public DateTime scp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[] scp_dtAcs { get; set; }
+    public DateTime scp_dtAcs { get; set; }
 
     [Column(TypeName = "varchar(48)")]
     public string scp_desc { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] scp_desat { get; set; }
+    public int scp_desat { get; set; }
 
     [Column(TypeName = "varchar(8)")]
     public string scp_ncmNum { get; set; }
