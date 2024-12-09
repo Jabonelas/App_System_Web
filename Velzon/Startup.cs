@@ -30,8 +30,8 @@ namespace Velzon
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             // Registro de serviços personalizados
-            services.AddScoped<ProdutoService>();
             services.AddScoped<CategoriaService>();
+            services.AddScoped<ProdutoService>();
             services.AddScoped<SubCategoriaService>();
             services.AddScoped<SecaoService>();
 

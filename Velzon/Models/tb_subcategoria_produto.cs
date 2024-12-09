@@ -27,7 +27,7 @@ public partial class tb_subcategoria_produto
     public DateTime scp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public DateTime scp_dtAcs { get; set; }
+    public DateTime? scp_dtAcs { get; set; }
 
     [Column(TypeName = "varchar(48)")]
     public string scp_desc { get; set; }
@@ -36,7 +36,7 @@ public partial class tb_subcategoria_produto
     public int scp_desat { get; set; }
 
     [Column(TypeName = "varchar(8)")]
-    public string scp_ncmNum { get; set; }
+    public string? scp_ncmNum { get; set; }
 
     [Column(TypeName = "smallint")]
     public long scp_nfeCsosn { get; set; }

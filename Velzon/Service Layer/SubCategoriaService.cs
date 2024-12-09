@@ -51,28 +51,28 @@ public class SubCategoriaService
     }
 
 
-    public void EditarCadastroSubCategoria(tb_categoria_produto _categoria_produto)
+    public void EditarCadastroSubCategoria(tb_subcategoria_produto _subcategoria_produto)
     {
-        if (_categoria_produto == null)
+        if (_subcategoria_produto == null)
         {
-            throw new ArgumentNullException(nameof(_categoria_produto), "A categoria não pode ser nulo.");
+            throw new ArgumentNullException(nameof(_subcategoria_produto), "A subcategoria não pode ser nulo.");
         }
 
-        tb_categoria_produto categoria = context.tb_categoria_produto.FirstOrDefault(x => x.id_categoria_produto == _categoria_produto.id_categoria_produto);
+        tb_subcategoria_produto subcategoria = context.tb_subcategoria_produto.FirstOrDefault(x => x.id_subcategoria_produto == _subcategoria_produto.id_subcategoria_produto);
 
-        if (categoria != null)
+        if (subcategoria != null)
         {
 
-            categoria.cp_dtAlt = DateTime.Now;
-            categoria.fk_tb_secao_produto = _categoria_produto.fk_tb_secao_produto;
-            categoria.cp_desc = _categoria_produto.cp_desc;
+            subcategoria.scp_dtAlt = DateTime.Now;
+            subcategoria.fk_tb_categoria_produto = _subcategoria_produto.fk_tb_categoria_produto;
+            subcategoria.scp_desc = _subcategoria_produto.scp_desc;
 
 
             context.SaveChanges();
         }
         else
         {
-            throw new KeyNotFoundException("Categoria não encontrado.");
+            throw new KeyNotFoundException("SubCategoria não encontrado.");
         }
     }
 
@@ -102,13 +102,13 @@ public class SubCategoriaService
     }
 
 
-    public tb_categoria_produto DadosSubCategoriaEditar(int _idCategoria)
+    public tb_subcategoria_produto DadosSubCategoriaEditar(int _idSubCategoria)
     {
 
-        tb_categoria_produto categoria_produto = context.tb_categoria_produto
-                        .FirstOrDefault(x => x.id_categoria_produto == _idCategoria);
+        tb_subcategoria_produto subcategoria_produto = context.tb_subcategoria_produto
+                        .FirstOrDefault(x => x.id_subcategoria_produto == _idSubCategoria);
 
-        return categoria_produto;
+        return subcategoria_produto;
     }
 
 

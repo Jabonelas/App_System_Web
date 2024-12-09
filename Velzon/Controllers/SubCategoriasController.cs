@@ -42,6 +42,14 @@ namespace Velzon.Controllers
             }
         }
 
+
+
+        [HttpGet]
+        public IActionResult CadastrarSubCategoria()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult CadastrarSubCategoria(tb_subcategoria_produto _subcategoria_produto)
         {
@@ -74,7 +82,54 @@ namespace Velzon.Controllers
 
         }
 
+        [ActionName("EditarSubCategoria")]
+        public IActionResult EditarSubCategoria(int idSubCategoria)
+        {
+            try
+            {
+                var subcategoria = subCategoriaService.DadosSubCategoriaEditar(idSubCategoria);
 
+                return View(subcategoria);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao exibir dados da subcategoria selecionada: {ex.Message}");
+
+                TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+                return RedirectToAction("SubCategorias", "SubCategorias");
+            }
+
+        }
+
+        [HttpPut]
+        [HttpPost]
+        public IActionResult EditarSubCategoria(tb_subcategoria_produto _subcategoria_produto)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    subCategoriaService.EditarCadastroSubCategoria(_subcategoria_produto);
+
+                    TempData["mensagem"] = "A subcategoria foi atualizada com sucesso!";
+
+                    return RedirectToAction("SubCategorias", "SubCategorias");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro ao editar dados da subcategoria: {ex.Message}");
+
+                    TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+                    return RedirectToAction("SubCategorias", "SubCategorias");
+                }
+
+            }
+            else
+            {
+                TempData["mensagem"] = "Por favor, preencha todos os campos obrigatorios para continuar.";
+                return View(_subcategoria_produto);
+            }
+        }
 
         [HttpPatch]
         public IActionResult DeletarSubCategoria(int _idCategoria)

@@ -146,8 +146,6 @@ namespace Velzon.Controllers
             }
         }
 
-
-
         [HttpPut]
         [HttpPost]
         public IActionResult EditarCategoria(tb_categoria_produto _categoria_produto)

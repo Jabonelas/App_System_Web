@@ -43,7 +43,7 @@ else if (mensagem == "A subcategoria foi deletada com sucesso!")
         @mensagem
     </div>
 }
-else if (mensagem == "A categoria foi atualizada com sucesso!")
+else if (mensagem == "A subcategoria foi atualizada com sucesso!")
 {
     // Log para depuração
     Console.WriteLine($"Mensagem de sucesso: {mensagem}");
@@ -165,9 +165,9 @@ else if (mensagem == "A categoria foi atualizada com sucesso!")
     </script>
 
     <script>
-        function editarSubCategoria(_idCategoria) {
+        function editarSubCategoria(_idSubCategoria) {
             // Redirecionar para a página de edição com o parâmetro codRef
-            window.location.href = `/SubCategorias/EditarSubCategoria?idCategoria=${_idCategoria}`;
+            window.location.href = `/SubCategorias/EditarSubCategoria?idSubCategoria=${_idSubCategoria}`;
         }
 
     </script>

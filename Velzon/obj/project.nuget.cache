@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3XiRPbXVxPA=",
+  "dgSpecHash": "Pe/LMBn6wXo=",
   "success": true,
-  "projectFilePath": "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
+  "projectFilePath": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\israe\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.20\\microsoft.data.sqlite.core.7.0.20.nupkg.sha512",
     "C:\\Users\\israe\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
