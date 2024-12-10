@@ -16,14 +16,15 @@ public partial class tb_secao_produto
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] sp_dtCri { get; set; }
+    public DateTime sp_dtCri { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] sp_dtAlt { get; set; }
+    public DateTime sp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[] sp_dtAcs { get; set; }
+
+    public DateTime sp_dtAcs { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
     public int sp_desat { get; set; }

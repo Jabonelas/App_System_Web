@@ -19,13 +19,9 @@ public class CategoriaService
         _categoria_produto.cp_dtCri = DateTime.Now;
         _categoria_produto.cp_dtAlt = DateTime.Now;
         _categoria_produto.cp_desat = 0;
-        _categoria_produto.cp_desc = _categoria_produto.cp_desc;
-        _categoria_produto.fk_tb_secao_produto = _categoria_produto.fk_tb_secao_produto;
-
 
         context.tb_categoria_produto.Add(_categoria_produto);
         context.SaveChanges();
-
     }
 
 
@@ -37,7 +33,6 @@ public class CategoriaService
                         .ToList();
 
         return categorias;
-
     }
 
 
@@ -49,8 +44,6 @@ public class CategoriaService
                         .ToList();
 
         return categorias;
-
-
     }
 
 
@@ -78,6 +71,7 @@ public class CategoriaService
             throw new KeyNotFoundException("Categoria não encontrado.");
         }
     }
+
 
     public IEnumerable<dynamic> CarregarListaCategorias()
     {
@@ -126,6 +120,5 @@ public class CategoriaService
         }
 
     }
-
 
 }

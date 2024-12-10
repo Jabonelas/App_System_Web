@@ -33,7 +33,7 @@ namespace Velzon
             services.AddScoped<CategoriaService>();
             services.AddScoped<ProdutoService>();
             services.AddScoped<SubCategoriaService>();
-            services.AddScoped<SecaoService>();
+            services.AddScoped<SecoesService>();
 
             // Registro do suporte a MVC (Controllers e Views)
             services.AddControllersWithViews()
@@ -75,7 +75,7 @@ namespace Velzon
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=SubCategorias}/{action=SubCategorias}/{id?}");
+                    pattern: "{controller=Secoes}/{action=Secoes}/{id?}");
                 // pattern: "{controller=Categorias}/{action=Categorias}/{id?}");
             });
         }

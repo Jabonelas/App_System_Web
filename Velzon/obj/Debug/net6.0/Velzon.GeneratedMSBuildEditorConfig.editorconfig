@@ -742,8 +742,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcT3ZlcnZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/israe/source/repos/App_System_Web/Velzon/Views/Secoes/Secao.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb2VzXFNlY2FvLmNzaHRtbA==
+[C:/Users/israe/source/repos/App_System_Web/Velzon/Views/Secoes/CadastrarSecao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb2VzXENhZGFzdHJhclNlY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/israe/source/repos/App_System_Web/Velzon/Views/Secoes/EditarSecao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb2VzXEVkaXRhclNlY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/israe/source/repos/App_System_Web/Velzon/Views/Secoes/Secoes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb2VzXFNlY29lcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/israe/source/repos/App_System_Web/Velzon/Views/Shared/_customizer.cshtml]
