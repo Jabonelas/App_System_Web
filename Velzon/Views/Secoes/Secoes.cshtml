@@ -34,7 +34,7 @@
         @mensagem
     </div>
 }
-else if (mensagem == "A seção foi deletada com sucesso!")
+else if (mensagem == "A secao foi deletada com sucesso!")
 {
     // Log para depuração
     Console.WriteLine($"Mensagem de sucesso: {mensagem}");
@@ -57,7 +57,7 @@ else if (mensagem == "A seção foi atualizada com sucesso!")
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">Seção Cadastradas</h5>
+                <h5 class="card-title mb-0">Seções Cadastradas</h5>
                 <div class="col-lg-12">
                     <div class="text-end">
                         <a href="/Secoes/CadastrarSecao" class="btn btn-primary">Cadastrar Nova
@@ -144,7 +144,7 @@ else if (mensagem == "A seção foi atualizada com sucesso!")
 
                 $.ajax({
                     type: "PATCH",
-                    url: "/Secao/DeletarSecao",
+                    url: "/Secoes/DeletarSecao",
                     data: { _idSecao: idSecao },
                     success: function () {
 

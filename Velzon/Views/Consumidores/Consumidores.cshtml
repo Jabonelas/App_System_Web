@@ -1,0 +1,195 @@
+@{
+    ViewBag.Title = "Datatables";
+    ViewBag.pTitle = "Datatables";
+    ViewBag.pageTitle = "Tables";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <!--datatable css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+    <!--datatable responsive css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+}
+
+
+
+@model IEnumerable<Velzon.Models.tb_ator>
+
+@{
+    var listaConsumidores = ViewData["ListaConsumidores"] as IEnumerable<dynamic>;
+}
+
+@{
+    var mensagem = TempData["mensagem"] as string; // Armazena o valor de TempData em uma variável
+}
+
+@if (mensagem == "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.")
+{
+    <div class="alert alert-danger" role="alert">
+        @mensagem
+    </div>
+}
+else if (mensagem == "O consumidor foi deletado com sucesso!")
+{
+    // Log para depuração
+    Console.WriteLine($"Mensagem de sucesso: {mensagem}");
+
+    <div class="alert alert-success" role="alert">
+        @mensagem
+    </div>
+}
+else if (mensagem == "O consumidor foi atualizado com sucesso!")
+{
+    // Log para depuração
+    Console.WriteLine($"Mensagem de sucesso: {mensagem}");
+
+    <div class="alert alert-success" role="alert">
+        @mensagem
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Consumidores Cadastrados</h5>
+                <div class="col-lg-12">
+                    <div class="text-end">
+                        <a href="/Produtos/CadastrarProduto" class="btn btn-primary">Cadastrar Novo Consumidor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="model-datatables" class="table table-bordered nowrap table-striped align-middle"
+                    style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Cód. Prod.</th>
+                            <th>Descrição Curta</th>
+                            <th>Descrição</th>
+                            <th>Marca</th>
+                            <th>Categoria</th>
+                            <th>SubCategoria</th>
+                            <th>Vlr. Un. Prod.</th>
+                            <th>Est. Total</th>
+                            <th>
+                                <Opt>Opções</Opt>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in @listaConsumidores)
+                        {
+                            <tr>
+                                <td>@item.pd_codRef</td>
+                                <td>@item.pd_descCurta</td>
+                                <td>@item.pd_desc</td>
+                                <td>@item.mp_desc</td>
+                                <td>@item.cp_desc</td>
+                                <td>@item.scp_desc</td>
+                                <td>@item.pd_vlrUnComBase?.ToString("C")</td>
+                                <td>@item.pd_estTot</td>
+                                <td>
+                                    <div class="dropdown d-inline-block">
+                                        <button class="btn btn-soft-secondary btn-sm dropdown" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="ri-more-fill align-middle"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item"
+                                                    onclick="visualizarProduto('@item.pd_codRef')">
+                                                    <i class="ri-eye-fill align-bottom me-2 text-muted"></i> Visualizar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item"
+                                                    onclick="editarProduto('@item.pd_codRef')">
+                                                    <i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Editar
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a onclick="confirmarExclusao(@item.id_produto)"
+                                                    class="dropdown-item remove-item-btn">
+                                                    <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Deletar
+                                                </a>
+                                                @* <button onclick="confirmarExclusao(@item.id_produto)" type="button"
+                                                    class="btn btn-danger form-group">Deletar</button> *@
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!--datatable js-->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <script src="~/assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+    <script>
+        function confirmarExclusao(idPedido) {
+            if (confirm("Tem certeza que deseja excluir?")) {
+
+                $.ajax({
+                    type: "PATCH",
+                    url: "/Produtos/DeletarProduto",
+                    data: { _idProduto: idPedido },
+                    success: function () {
+
+        @* location.reload(); *@
+
+                                                                                                                                                                                                                                                },
+                    error: function (xhr, status, error) {
+
+                        console.log("Ocorreu um erro durante a requisição AJAX: " + error);
+                    }
+                });
+            }
+        }
+    </script>
+
+    <script>
+        function visualizarProduto(codRef) {
+            // Redirecionar para a página passando o parâmetro codRef
+            window.location.href = `/Produtos/ExibirProdutos?codRef=${codRef}`;
+        }
+
+    </script>
+
+    <script>
+        function editarProduto(codRef) {
+            // Redirecionar para a página de edição com o parâmetro codRef
+            window.location.href = `/Produtos/EditarProduto?codRef=${codRef}`;
+        }
+
+    </script>
+
+
+}

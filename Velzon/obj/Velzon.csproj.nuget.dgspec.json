@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj": {}
+    "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj": {
+    "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
+        "projectUniqueName": "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
         "projectName": "Velzon",
-        "projectPath": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
+        "projectPath": "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Velzon.csproj",
         "packagesPath": "C:\\Users\\israe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\obj\\",
+        "outputPath": "c:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"

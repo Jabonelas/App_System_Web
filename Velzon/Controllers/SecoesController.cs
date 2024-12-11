@@ -149,7 +149,6 @@ namespace Velzon.Controllers
         [HttpPatch]
         public IActionResult DeletarSecao(int _idSecao)
         {
-
             try
             {
                 secoesService.DeletarSecao(_idSecao);

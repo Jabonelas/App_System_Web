@@ -107,28 +107,7 @@ public class ProdutoService
     }
 
 
-    // public void EditarProduto(tb_produto _produto)
-    // {
-    //     tb_produto produto = context.tb_produto.FirstOrDefault(x => x.pd_codRef == _produto.pd_codRef);
 
-    //     if (produto != null)
-    //     {
-    //         // Atualiza os campos específicos
-    //         produto.pd_desc = _produto.pd_desc;
-    //         produto.pd_descCurta = _produto.pd_descCurta;
-    //         // Continue com os outros campos necessários...
-
-    //         // Atualiza a data de alteração
-    //         produto.pd_dtAlt = DateTime.Now;
-
-    //         // Salva as alterações
-    //         context.SaveChanges();
-    //     }
-    //     else
-    //     {
-    //         throw new Exception("Produto não encontrado.");
-    //     }
-    // }
 
 
     public long BuscarCodigoProduto()

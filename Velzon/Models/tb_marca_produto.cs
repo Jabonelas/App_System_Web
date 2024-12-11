@@ -16,14 +16,14 @@ public partial class tb_marca_produto
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] mp_dtCri { get; set; }
+    public DateTime mp_dtCri { get; set; }
 
     [Required]
     [Column(TypeName = "DATETIME")]
-    public byte[] mp_dtAlt { get; set; }
+    public DateTime mp_dtAlt { get; set; }
 
     [Column(TypeName = "DATETIME")]
-    public byte[] mp_dtAcs { get; set; }
+    public DateTime mp_dtAcs { get; set; }
 
     public long? mp_desat { get; set; }
 

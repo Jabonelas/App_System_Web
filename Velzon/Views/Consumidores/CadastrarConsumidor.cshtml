@@ -1,0 +1,470 @@
+@{
+    ViewBag.Title = "Form layout";
+    ViewBag.pTitle = "Form layout";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Velzon.Models.tb_produto
+
+@{
+    var mensagem = TempData["mensagem"] as string; // Armazena o valor de TempData em uma variável
+}
+
+@if (mensagem == "Operação realizada com sucesso!")
+{
+    <div class="alert alert-success" role="alert">
+        @mensagem
+    </div>
+}
+else if (mensagem == "Por favor, preencha todos os campos obrigatórios para continuar.")
+{
+    <div class="alert alert-danger" role="alert">
+        @mensagem
+    </div>
+}
+
+
+<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Cadastrar Produtos</h4>
+                    <div class="flex-shrink-0">
+                    </div>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <p class="text-muted">Aqui você pode adicionar os dados do produto para realizar o cadastro</p>
+                    <div class="live-preview">
+                        <form asp-controller="Produtos" asp-action="CadastrarProduto" method="post"
+                            onsubmit="removerSimboloPrecoCustoR$(),removerSimboloVlrVendaR$() ">
+                            @* @Html.AntiForgeryToken() *@
+                            <div class="row g-3">
+
+                                <div class="col-lg-2">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_codRef" type="number" class="form-control" id="CodigoProd"
+                                            minlength="10" maxlength="200" placeholder="Código Prod." readonly>
+                                        <label for="pd_codRef">Código Prod.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_descCurta" type="text" class="form-control"
+                                            id="DescricaoCurta" placeholder="Descrição Curta" minlength="2"
+                                            maxlength="100">
+                                        <label for="pd_descCurta">nome Com</label>
+                                        <span asp-validation-for="pd_descCurta" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_desc" type="text" class="form-control" id="Descricao"
+                                            placeholder="Descrição" minlength="2" maxlength="150">
+                                        <label for="pd_desc">Descrição</label>
+                                        <span asp-validation-for="pd_desc" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="Marca" <select asp-for="fk_tb_marca_produto"
+                                            class="form-select" id="Marca" aria-label="Floating label select example">
+                                            <option selected>Selecione...</option>
+                                        </select>
+                                        </select>
+                                        <label for="Marca">Marca</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_barras" type="text" class="form-control" id="CodBarras"
+                                            placeholder="Cód. Barras" minlength="2" maxlength="20">
+                                        <label for="CodBarras">Cód. Barras</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-floating">
+                                        <select asp-for="fk_tb_categoria_produto" class="form-select" id="Categoria"
+                                            aria-label="Floating label select example">
+                                            <option selected>Selecione...</option>
+                                        </select>
+                                        <label for="Categoria">Categoria</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-floating">
+                                        <select asp-for="fk_tb_subcategoria_produto" class="form-select"
+                                            id="SubCategoria" aria-label="Floating label select example">
+                                            <option selected>Selecione...</option>
+                                        </select>
+                                        <label for="SubCategoria">SubCategoria</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_cstUnComBase" type="text" class="form-control" id="Preco"
+                                            placeholder="Preço" minlength="2" maxlength="12">
+                                        <label for="Preco">Preço de Custo</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <select asp-for="pd_unMedCom" class="form-select"
+                                            aria-label="Floating label select example" id="Un">
+                                            <option selected>Selecione...</option>
+                                            <option value="0">NAO DEFINIDO</option>
+                                            <option value="1">UN</option>
+                                            <option value="2">PC</option>
+                                            <option value="3">PT</option>
+                                            <option value="4">RL</option>
+                                            <option value="5">BN</option>
+                                            <option value="6">BL</option>
+                                            <option value="7">CO</option>
+                                            <option value="10">KG</option>
+                                            <option value="11">KT</option>
+                                            <option value="20">MT</option>
+                                            <option value="21">M2</option>
+                                            <option value="22">M3</option>
+                                            <option value="30">LT</option>
+                                            <option value="31">ML</option>
+                                            <option value="32">FL</option>
+                                            <option value="42">MW</option>
+                                            <option value="50">PR</option>
+                                            <option value="51">DZ</option>
+                                            <option value="52">CJ</option>
+                                            <option value="53">CX</option>
+                                            <option value="54">FD</option>
+                                            <option value="55">SD</option>
+                                            <option value="56">JG</option>
+                                            <option value="57">FR</option>
+                                            <option value="58">TB</option>
+                                            <option value="59">BD</option>
+                                            <option value="60">FC</option>
+                                            <option value="61">TU</option>
+                                            <option value="62">GL</option>
+                                            <option value="63">LA</option>
+                                            <option value="64">MI</option>
+                                        </select>
+                                        <label for="Un">Un.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_vlrUnComBase" type="text" class="form-control" id="PrecoUn"
+                                            placeholder="Enter your city" minlength="2" maxlength="12">
+                                        <label for="PrecoUn">Preço Un.</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_estTot" type="number" class="form-control"
+                                            id="EstoqueInicial" placeholder="Enter your city" minlength="2"
+                                            maxlength="10">
+                                        <label for="EstoqueInicial">Estoque Inicial</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_estMaxBase" type="number" class="form-control"
+                                            id="EstoqueMaximo" placeholder="Enter your zipcode" minlength="2"
+                                            maxlength="10">
+                                        <label for="EstoqueMaximo">Estoque Máximo</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-floating">
+                                        <input asp-for="pd_estMinBase" type="number" class="form-control"
+                                            id="EstoqueMinimo" placeholder="Enter your zipcode" minlength="2"
+                                            maxlength="10">
+                                        <label for="EstoqueMinimo">Estoque Mínimo</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="d-none code-view">
+                        <pre class="language-markup" style="height: 275px">
+<code>&lt;form action=&quot;#&quot;&gt;
+    &lt;div class=&quot;row g-3&quot;&gt;
+        &lt;div class=&quot;col-lg-6&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;firstnamefloatingInput&quot; placeholder=&quot;Enter your firstname&quot;&gt;
+                &lt;label for=&quot;firstnamefloatingInput&quot;&gt;First Name&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-6&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;lastnamefloatingInput&quot; placeholder=&quot;Enter your Lastname&quot;&gt;
+                &lt;label for=&quot;lastnamefloatingInput&quot;&gt;Last Name&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;emailfloatingInput&quot; placeholder=&quot;Enter your email&quot;&gt;
+                &lt;label for=&quot;emailfloatingInput&quot;&gt;Email Address&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;passwordfloatingInput&quot; placeholder=&quot;Enter your password&quot;&gt;
+                &lt;label for=&quot;passwordfloatingInput&quot;&gt;Password&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;passwordfloatingInput1&quot; placeholder=&quot;Confirm password&quot;&gt;
+                &lt;label for=&quot;passwordfloatingInput1&quot;&gt;Confirm Password&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;cityfloatingInput&quot; placeholder=&quot;Enter your city&quot;&gt;
+                &lt;label for=&quot;cityfloatingInput&quot;&gt;City&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;select class=&quot;form-select&quot; id=&quot;floatingSelect&quot; aria-label=&quot;Floating label select example&quot;&gt;
+                  &lt;option selected&gt;USA&lt;/option&gt;
+                  &lt;option value=&quot;1&quot;&gt;Brazil&lt;/option&gt;
+                  &lt;option value=&quot;2&quot;&gt;France&lt;/option&gt;
+                  &lt;option value=&quot;3&quot;&gt;Germany&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;label for=&quot;floatingSelect&quot;&gt;Country&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-4&quot;&gt;
+            &lt;div class=&quot;form-floating&quot;&gt;
+                &lt;input type=&quot;number&quot; class=&quot;form-control&quot; id=&quot;zipfloatingInput&quot; placeholder=&quot;Enter your zipcode&quot;&gt;
+                &lt;label for=&quot;zipfloatingInput&quot;&gt;Zipcode&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-12&quot;&gt;
+            &lt;div class=&quot;text-end&quot;&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts {
+        <!-- prismjs plugin -->
+        <script src="~/assets/libs/prismjs/prism.js"></script>
+        <script src="~/assets/js/app.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.13/jquery.validate.unobtrusive.min.js"></script>
+
+        <script>
+
+            const baseUrlMarca = window.location.origin;
+            const apiUrlMarcas = `${baseUrlMarca}/Marca/GetMarcas`;
+            const comboBoxMarca = document.getElementById("Marca");
+
+            async function carregarMarcas() {
+                try {
+                    const response = await fetch(apiUrlMarcas);
+
+                    if (!response.ok) {
+                        throw new Error("Erro ao buscar o código do produto.");
+                    }
+
+                    const marcas = await response.json();
+
+                    // Limpa as opções anteriores
+                    comboBoxMarca.innerHTML = '<option selected disabled>Selecione...</option>';
+
+                    // Adiciona as opções dinamicamente
+                    marcas.forEach(marca => {
+                        const option = document.createElement("option");
+                        option.value = marca.id_marca_produto; // Define o value como o ID da marca
+                        option.textContent = marca.mp_desc; // Define o texto como o nome da marca
+                        comboBoxMarca.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Erro ao carregar as marcas:", error);
+                }
+            }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarMarcas);
+        </script>
+
+        <script>
+
+            const baseUrlCategoria = window.location.origin;
+            const apiUrlCategorias = `${baseUrlCategoria}/Categorias/GetCategorias`;
+            const comboBoxCategoria = document.getElementById("Categoria");
+
+            async function carregarCategorias() {
+                try {
+                    const response = await fetch(apiUrlCategorias);
+
+                    if (!response.ok) {
+                        throw new Error("Erro ao buscar o código do produto.");
+                    }
+
+                    const categorias = await response.json();
+
+                    // Limpa as opções anteriores
+                    comboBoxCategoria.innerHTML = '<option selected disabled>Selecione...</option>';
+
+                    // Adiciona as opções dinamicamente
+                    categorias.forEach(categoria => {
+                        const option = document.createElement("option");
+                        option.value = categoria.id_categoria_produto; // Define o value como o ID da categoria
+                        option.textContent = categoria.cp_desc; // Define o texto como o nome da categoria
+                        comboBoxCategoria.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Erro ao carregar as categorias:", error);
+                }
+            }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarCategorias);
+
+        </script>
+
+        <script>
+
+            const baseUrlSubCategoria = window.location.origin;
+            const apiUrlSubCategorias = `${baseUrlSubCategoria}/SubCategorias/GetSubCategorias`;
+
+            const comboBoxSubCategoria = document.getElementById("SubCategoria");
+
+            async function carregarSubCategorias() {
+                try {
+                    const response = await fetch(apiUrlSubCategorias);
+
+                    if (!response.ok) {
+                        throw new Error("Erro ao buscar o código do produto.");
+                    }
+
+                    const subcategorias = await response.json();
+
+                    // Limpa as opções anteriores
+                    comboBoxSubCategoria.innerHTML = '<option selected disabled>Selecione...</option>';
+
+                    // Adiciona as opções dinamicamente
+                    subcategorias.forEach(subcategoria => {
+                        const option = document.createElement("option");
+                        option.value = subcategoria.id_subcategoria_produto; // Define o value como o ID da subcategoria
+                        option.textContent = subcategoria.scp_desc; // Define o texto como o nome da subcategoria
+                        comboBoxSubCategoria.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Erro ao carregar as subcategorias:", error);
+                }
+            }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarSubCategorias);
+        </script>
+
+
+        <script>
+            // URL da API para obter o código do produto
+            const baseUrlCodProd = window.location.origin;
+            const apiUrlCodProd = `${baseUrlCodProd}/Produtos/GetCodProduto`;
+
+            // Campo de entrada onde será exibido o código do produto
+            const inputCodigoProd = document.getElementById("CodigoProd");
+
+            // Função para carregar o código do produto
+            async function carregarCodigoProduto() {
+                try {
+                    const response = await fetch(apiUrlCodProd);
+
+                    if (!response.ok) {
+                        throw new Error("Erro ao buscar o código do produto.");
+                    }
+
+                    const codProd = await response.json();
+
+                    // Define o valor retornado no campo de entrada
+                    if (codProd && codProd.pd_codRef) {
+                        inputCodigoProd.value = codProd.pd_codRef; // Define o código no campo
+                    } else {
+                        console.warn("Nenhum código de produto encontrado.");
+                    }
+                } catch (error) {
+                    console.error("Erro ao carregar o código do produto:", error);
+                }
+            }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarCodigoProduto);
+        </script>
+
+
+        <script>
+            // Formato de moeda enquanto o usuário digita
+            document.getElementById("PrecoUn").addEventListener("input", function (e) {
+                const value = parseFloat(e.target.value.replace(/[^\d]/g, '')) / 100;
+                e.target.value = new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                }).format(value);
+            });
+        </script>
+
+
+        @*Remover o simbolo de R$ no momento do input*@
+        <script>
+            function removerSimboloVlrVendaR$() {
+                var input = document.getElementById("PrecoUn");
+                var valorSemSimbolo = input.value.replace(/R\$|\,/g, "").trim();
+                input.value = valorSemSimbolo;
+            }
+        </script>
+
+        <script>
+            // Formato de moeda enquanto o usuário digita
+            document.getElementById("Preco").addEventListener("input", function (e) {
+                const value = parseFloat(e.target.value.replace(/[^\d]/g, '')) / 100;
+                e.target.value = new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                }).format(value);
+            });
+        </script>
+
+
+        @*Remover o simbolo de R$ no momento do input*@
+        <script>
+            function removerSimboloPrecoCustoR$() {
+                var input = document.getElementById("Preco");
+                var valorSemSimbolo = input.value.replace(/R\$|\,/g, "").trim();
+                input.value = valorSemSimbolo;
+            }
+        </script>
+    }
