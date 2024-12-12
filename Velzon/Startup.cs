@@ -34,6 +34,7 @@ namespace Velzon
             services.AddScoped<ConsumidorService>();
             services.AddScoped<ProdutoService>();
             services.AddScoped<MarcasService>();
+            services.AddScoped<MatrizService>();
             services.AddScoped<SubCategoriaService>();
             services.AddScoped<SecoesService>();
 
@@ -77,7 +78,7 @@ namespace Velzon
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Secoes}/{action=Secoes}/{id?}");
+                    pattern: "{controller=Consumidores}/{action=CadastrarConsumidor}/{id?}");
                 // pattern: "{controller=Categorias}/{action=Categorias}/{id?}");
             });
         }

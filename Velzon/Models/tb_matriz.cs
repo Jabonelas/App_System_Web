@@ -44,7 +44,7 @@ public partial class tb_matriz
     public byte[] mt_efetuaTestesEletro { get; set; }
 
     [Column(TypeName = "NUMERIC(1, 0)")]
-    public byte[] mt_desat { get; set; }
+    public int mt_desat { get; set; }
 
     [Column(TypeName = "tinyint")]
     public long mt_persTim { get; set; }
