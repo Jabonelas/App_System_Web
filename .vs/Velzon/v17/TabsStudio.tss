@@ -20,7 +20,10 @@
       <string>C:\Users\israe\source\repos\App_System_Web\Velzon\Controllers\ProdutosController.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\israe\source\repos\App_System_Web\Velzon\Context\CApp_SystemApp_System_BancobancoSQLitedbContext.cs</string>
+      <string>C:\Users\israe\source\repos\App_System_Web\Velzon\Controllers\ConsumidoresController.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\israe\source\repos\App_System_Web\Velzon\Classes\API_Cep.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

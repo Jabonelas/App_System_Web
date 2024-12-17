@@ -31,6 +31,7 @@ namespace Velzon
 
             // Registro de serviços personalizados
             services.AddScoped<CategoriaService>();
+            services.AddScoped<CEPService>();
             services.AddScoped<ConsumidorService>();
             services.AddScoped<ProdutoService>();
             services.AddScoped<MarcasService>();

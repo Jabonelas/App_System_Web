@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\israe\\source\\repos\\App_System_Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\controllers\\consumidorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\controllers\\consumidorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\context\\capp_systemapp_system_bancobancosqlitedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\context\\capp_systemapp_system_bancobancosqlitedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|c:\\users\\israe\\source\\repos\\app_system_web\\velzon\\views\\produtos\\produtos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B514B032-802C-4DD7-BF7F-AFF8E850E8D0}|Velzon\\Velzon.csproj|solutionrelative:velzon\\views\\produtos\\produtos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -39,19 +51,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ConsumidoresController.cs",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Controllers\\ConsumidoresController.cs",
+              "RelativeDocumentMoniker": "Velzon\\Controllers\\ConsumidoresController.cs",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Controllers\\ConsumidoresController.cs",
+              "RelativeToolTip": "Velzon\\Controllers\\ConsumidoresController.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAAwKsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:48:18.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CApp_SystemApp_System_BancobancoSQLitedbContext.cs",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Context\\CApp_SystemApp_System_BancobancoSQLitedbContext.cs",
+              "RelativeDocumentMoniker": "Velzon\\Context\\CApp_SystemApp_System_BancobancoSQLitedbContext.cs",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Context\\CApp_SystemApp_System_BancobancoSQLitedbContext.cs",
+              "RelativeToolTip": "Velzon\\Context\\CApp_SystemApp_System_BancobancoSQLitedbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T00:38:40.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Controllers\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "Velzon\\Controllers\\ProdutosController.cs",
+              "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "Velzon\\Controllers\\ProdutosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T00:37:30.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Produtos.cshtml",
               "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Produtos\\Produtos.cshtml",
               "RelativeDocumentMoniker": "Velzon\\Views\\Produtos\\Produtos.cshtml",
               "ToolTip": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Produtos\\Produtos.cshtml",
               "RelativeToolTip": "Velzon\\Views\\Produtos\\Produtos.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-21T23:49:37.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T23:49:37.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "_sidebar.cshtml",
               "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Shared\\_sidebar.cshtml",
               "RelativeDocumentMoniker": "Velzon\\Views\\Shared\\_sidebar.cshtml",
@@ -59,12 +108,11 @@
               "RelativeToolTip": "Velzon\\Views\\Shared\\_sidebar.cshtml",
               "ViewState": "AgIAABsDAAAAAAAAAAAmwEQDAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-21T21:47:51.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T21:47:51.082Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Hovered.cshtml",
               "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Layouts\\Hovered.cshtml",
               "RelativeDocumentMoniker": "Velzon\\Views\\Layouts\\Hovered.cshtml",
@@ -76,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Velzon\\Views\\Dashboard\\Index.cshtml",
@@ -88,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\israe\\source\\repos\\App_System_Web\\Velzon\\Startup.cs",
               "RelativeDocumentMoniker": "Velzon\\Startup.cs",

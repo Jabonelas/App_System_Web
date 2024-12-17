@@ -201,3 +201,4 @@ C:\Users\israe\source\repos\App_System_Web\Velzon\obj\Debug\net6.0\Velzon.pdb
 C:\Users\israe\source\repos\App_System_Web\Velzon\obj\Debug\net6.0\Velzon.genruntimeconfig.cache
 C:\Users\israe\source\repos\App_System_Web\Velzon\obj\Debug\net6.0\ref\Velzon.dll
 C:\Users\israe\source\repos\App_System_Web\Velzon\obj\Debug\net6.0\Velzon.sourcelink.json
+C:\Users\israe\source\repos\App_System_Web\Velzon\bin\Debug\net6.0\Newtonsoft.Json.dll

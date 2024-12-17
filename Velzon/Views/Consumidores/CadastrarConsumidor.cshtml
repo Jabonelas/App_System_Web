@@ -132,7 +132,7 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
 
                                 <p class="text-muted">Endereço</p>
 
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-floating">
                                         <input asp-for="at_end_Cep" type="text" class="form-control" id="cep"
                                             placeholder="CEP" minlength="2" maxlength="12">
@@ -295,13 +295,14 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
                                             maxlength="10">
                                         <label for="EstoqueMinimo">Estoque Mínimo</label>
                                     </div>
-                                </div>
+                                </div>*@
 
                                 <div class="col-lg-12">
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-primary">Salvar</button>
                                     </div>
-                                </div> *@
+                                </div>
+
                             </div>
 
                         </form>
@@ -517,6 +518,73 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
                 }
             });
 
+        </script>
+
+        @*Setando Endereço com base no CEP*@
+        <script>
+
+            $(document).ready(function () {
+                var cepInput = $("#cep");
+                $("#cep").change(function () {
+                    var cep = cepInput.val();
+                    console.log(cep)
+                    if (cep.length >= 9) {
+                        $.ajax({
+                            url: `/CEP/BuscarCEP?cep=${cep}`,
+
+                            method: "GET",
+                            success: (data) => {
+                                console.log(data.estado);
+                                console.log(data.localidade);
+                                $("input[id='endereco']").val(data.logradouro);
+                                $("input[id='bairro']").val(data.bairro);
+                                $("input[id='municipio']").val(data.localidade);
+                                $("#estado").val(data.estado);
+                                $("input[id='complemento']").val(data.complemento);
+                            },
+                            error: (error) => {
+                                console.error(error);
+                            }
+                        });
+                    }
+                });
+            });
+
+        </script>
+
+        <script>
+            const baseUrlMunicipio = window.location.origin;
+            const apiUrlMunicipios = `${baseUrlMunicipio}/CEP/GetMunicipio`;
+            const comboBoxMunicipio = document.getElementById("municipio");
+
+            // Valor atual do campo (ID da categoria) vindo do modelo via Razor
+            @* const categoriaSelecionada = @Html.Raw(Json.Serialize(Model.fk_tb_categoria_produto ?? 0)); *@
+
+                async function carregarMunicipio() {
+                    try {
+                        const response = await fetch(apiUrlMunicipios);
+
+                        if (!response.ok) {
+                            throw new Error("Erro ao buscar os Municipios.");
+                        }
+
+                        const municipios = await response.json();
+
+                        // Adiciona as opções dinamicamente
+                        municipios.forEach(municipio => {
+                            const option = document.createElement("option");
+                            option.value = municipio.id_municipio; // Define o value como o ID da municipio
+                            option.textContent = municipio.mu_nome; // Define o texto como o nome da municipio
+
+                            comboBoxMunicipio.appendChild(option);
+                        });
+                    } catch (error) {
+                        console.error("Erro ao carregar as municipios:", error);
+                    }
+                }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarMunicipio);
         </script>
 
         @* <script>

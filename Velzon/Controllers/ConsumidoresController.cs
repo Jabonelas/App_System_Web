@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Teste_Pratico.Infra.API;
 using Velzon.Context;
 using Velzon.Models;
 
@@ -17,7 +18,6 @@ namespace Velzon.Controllers
         {
             consumidorService = _consumidorService;
         }
-
 
         [ActionName("Secoes")]
         public IActionResult Secoes()
@@ -39,7 +39,6 @@ namespace Velzon.Controllers
                 return RedirectToAction("CadastrarSecao", "Secoes");
             }
         }
-
 
         [HttpGet]
         public IActionResult GetSecao()
@@ -103,7 +102,6 @@ namespace Velzon.Controllers
             {
                 var secao = consumidorService.DadosSecaoEditar(idSecao);
 
-
                 return View(secao);
             }
             catch (Exception ex)
@@ -156,7 +154,6 @@ namespace Velzon.Controllers
                 TempData["mensagem"] = "A secao foi deletada com sucesso!";
 
                 return RedirectToAction("Secoes", "Secoes");
-
             }
             catch (Exception ex)
             {
@@ -168,6 +165,41 @@ namespace Velzon.Controllers
                 return RedirectToAction("Secoes", "Secoes");
             }
         }
+
+
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> BuscarCEP(string cep)
+        {
+
+
+
+
+
+            try
+            {
+                API_Correios apiCorreios = new API_Correios();
+
+                //Tratando o CEP para enviar a requisição
+                string cepValido = cep.Replace("-", "").Replace(".", "");
+
+                //Pegando os dados que retornam da requisição
+                var dadosCep = await apiCorreios.APICorreios(cepValido);
+
+
+                return Ok(dadosCep);
+            }
+            catch (Exception ex)
+            {
+                // Em caso de erro, retorna uma mensagem de erro
+                return Json(new { sucesso = false, mensagem = $"Erro ao buscar o CEP: {ex.Message}" });
+            }
+        }
+
+
 
     }
 }
