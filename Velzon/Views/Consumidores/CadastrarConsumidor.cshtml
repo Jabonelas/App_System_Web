@@ -587,6 +587,42 @@ else if (mensagem == "Por favor, preencha todos os campos obrigatórios para con
             document.addEventListener("DOMContentLoaded", carregarMunicipio);
         </script>
 
+        <script>
+            const baseUrlEstado = window.location.origin;
+            const apiUrlEstados = `${baseUrlEstado}/CEP/GetEstado`;
+            const comboBoxEstado = document.getElementById("estado");
+
+            // Valor atual do campo (ID da categoria) vindo do modelo via Razor
+            @* const categoriaSelecionada = @Html.Raw(Json.Serialize(Model.fk_tb_categoria_produto ?? 0)); *@
+
+                async function carregarEstado() {
+                    try {
+                        const response = await fetch(apiUrlEstados);
+
+                        if (!response.ok) {
+                            throw new Error("Erro ao buscar os Estados.");
+                        }
+
+                        const estados = await response.json();
+
+                        // Adiciona as opções dinamicamente
+                        estados.forEach(estado => {
+                            const option = document.createElement("option");
+                            option.value = estado.id_estados_br; // Define o value como o ID da municipio
+                            option.textContent = estado.eb_nome; // Define o texto como o nome da municipio
+
+                            comboBoxEstado.appendChild(option);
+                        });
+                    } catch (error) {
+                        console.error("Erro ao carregar as estados:", error);
+                    }
+                }
+
+            // Chama a função ao carregar a página
+            document.addEventListener("DOMContentLoaded", carregarEstado);
+
+        </script>
+
         @* <script>
 
             const baseUrlCategoria = window.location.origin;

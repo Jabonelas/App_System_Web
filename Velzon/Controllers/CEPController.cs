@@ -62,5 +62,27 @@ namespace Velzon.Controllers
 
         }
 
+
+        [HttpGet]
+        public IActionResult GetEstado()
+        {
+            try
+            {
+                var listaEstado = cepService.BuscarEstados();
+
+                return Ok(listaEstado);
+            }
+            catch (Exception ex)
+            {
+                // Log do erro
+                Console.WriteLine($"Erro ao buscar lista de estados com id e nome: {ex.Message}");
+
+                TempData["mensagem"] = "Ocorreu um erro ao processar a solicitação. Tente novamente mais tarde.";
+
+                return RedirectToAction("CadastrarConsumidor", "Consumidores");
+            }
+
+        }
+
     }
 }

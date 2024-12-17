@@ -29,11 +29,24 @@ public class CEPService
     {
         var municipios = context.tb_municipio
                         .Select(x => new { x.id_municipio, x.mu_nome })
+                        .OrderBy(x => x.mu_nome) // Ordenação ascendente pelo campo eb_nome
                         .ToList();
 
         return municipios;
     }
 
+
+    public IEnumerable<dynamic> BuscarEstados()
+    {
+        var estados = context.tb_estados_br
+       .Where(x => x.eb_nome != null)
+       .Select(x => new { x.id_estados_br, x.eb_nome })
+       .OrderBy(x => x.eb_nome) // Ordenação ascendente pelo campo eb_nome
+       .ToList();
+
+
+        return estados;
+    }
 
     public IEnumerable<dynamic> BuscarCategoriaSelecionada(int _idCategoria)
     {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Velzon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7702b7ec3af2f22afc9e34dc99dffd2c6894ebb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24e8f8c192e9b86b4d50c2fd17b3d05b49ef19c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Velzon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Velzon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
